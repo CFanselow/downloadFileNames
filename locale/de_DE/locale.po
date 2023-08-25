@@ -1,0 +1,48 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-11-19T13:44:50+00:00\n"
+"PO-Revision-Date: 2020-01-29 10:35+0000\n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.9.1\n"
+
+msgid "plugins.generic.downloadFileNames.displayName"
+msgstr "Dateinamen Plugin"
+
+msgid "plugins.generic.downloadFileNames.description"
+msgstr "Bestimmt die Namen der Fahnendateien beim Download"
+
+msgid "plugins.generic.downloadFileNames.settings.types"
+msgstr "Festlegung der Namen von Fahnendateien beim Download."
+
+msgid "plugins.generic.downloadFileNames.settings.typesDescription"
+msgstr "Wählen Sie, wie die Dateinamen gebildet werden sollen:"
+
+msgid "plugins.generic.downloadFileNames.acronym.description"
+msgstr "Zeitschriftenkürzel"
+
+msgid "plugins.generic.downloadFileNames.volume.description"
+msgstr "Band"
+
+msgid "plugins.generic.downloadFileNames.number.description"
+msgstr "Nummer"
+
+msgid "plugins.generic.downloadFileNames.pages.description"
+msgstr "Seiten"
+
+msgid "plugins.generic.downloadFileNames.fileId.description"
+msgstr "ID-Nummer der Datei"
+
+msgid "plugins.generic.downloadFileNames.variableType.label"
+msgstr "Benutzerdefinierter Dateiname:"
+
+msgid "plugins.generic.downloadFileNames.originalType.label"
+msgstr "Ursprünglicher Dateiname (alte OJS-Versionen)"
+
+msgid "plugins.generic.downloadFileNames.titleType.label"
+msgstr "Titel des Artikels (wird gekürzt, wenn der Titel mehr als 100 Zeichen hat)"
