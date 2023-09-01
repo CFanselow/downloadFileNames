@@ -36,14 +36,14 @@ msgid "plugins.generic.downloadFileNames.pages.description"
 msgstr "Pages"
 
 msgid "plugins.generic.downloadFileNames.fileId.description"
-msgstr "File ID"
+msgstr "File ID (only for PDF galleys)"
 
 msgid "plugins.generic.downloadFileNames.variableType.label"
 msgstr "Custom file name:"
 
 msgid "plugins.generic.downloadFileNames.originalType.label"
-msgstr "Original file name"
+msgstr "Default file name (set during upload)"
 
 msgid "plugins.generic.downloadFileNames.titleType.label"
-msgstr "Article title (truncted when it exceeds 100 characters)"
+msgstr "Name of first author and article title (truncted when it exceeds 100 characters)"
 

@@ -36,13 +36,13 @@ msgid "plugins.generic.downloadFileNames.pages.description"
 msgstr "Seiten"
 
 msgid "plugins.generic.downloadFileNames.fileId.description"
-msgstr "ID-Nummer der Datei"
+msgstr "ID der Datei (nur für PDF-Dateien)"
 
 msgid "plugins.generic.downloadFileNames.variableType.label"
 msgstr "Benutzerdefinierter Dateiname:"
 
 msgid "plugins.generic.downloadFileNames.originalType.label"
-msgstr "Ursprünglicher Dateiname (alte OJS-Versionen)"
+msgstr "Dateiname (beim Upload festgelegt)"
 
 msgid "plugins.generic.downloadFileNames.titleType.label"
-msgstr "Titel des Artikels (wird gekürzt, wenn der Titel mehr als 100 Zeichen hat)"
+msgstr "Erstauthor und Titel des Artikels (wird abgeschnitten, wenn die Zeichenkette mehr als 100 Zeichen hat)"
