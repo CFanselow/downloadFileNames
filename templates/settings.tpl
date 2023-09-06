@@ -28,10 +28,11 @@
 					{fbvElement type="checkbox" id="number" checked=$number label={translate key="plugins.generic.downloadFileNames.number.description"} translate=false}
 					{fbvElement type="checkbox" id="pages" checked=$pages label={translate key="plugins.generic.downloadFileNames.pages.description"} translate=false}				
 					{fbvElement type="checkbox" id="fileId" checked=$fileId label={translate key="plugins.generic.downloadFileNames.fileId.description"} translate=false}
+					{fbvElement type="checkbox" id="author" checked=$author label={translate key="plugins.generic.downloadFileNames.author.description"} translate=false}				
+					{fbvElement type="checkbox" id="title" checked=$title label={translate key="plugins.generic.downloadFileNames.title.description"} translate=false}					
 				{/fbvFormSection}
 				</div>			
-			{fbvElement type="radio" name="type" id="type2" value=2 checked=($type==="2") label={translate key="plugins.generic.downloadFileNames.originalType.label"} translate=false}
-			{fbvElement type="radio" name="type" id="type3" value=3 checked=($type==="3") label={translate key="plugins.generic.downloadFileNames.titleType.label"} translate=false}				
+			{fbvElement type="radio" name="type" id="type2" value=2 checked=($type==="2") label={translate key="plugins.generic.downloadFileNames.originalType.label"} translate=false}				
 		{/fbvFormSection}
 	
 	{/fbvFormArea}

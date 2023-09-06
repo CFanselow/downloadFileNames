@@ -38,6 +38,12 @@ msgstr "Seiten"
 msgid "plugins.generic.downloadFileNames.fileId.description"
 msgstr "ID der Datei (nur für PDF-Dateien)"
 
+msgid "plugins.generic.downloadFileNames.author.description"
+msgstr "Erstautor"
+
+msgid "plugins.generic.downloadFileNames.title.description"
+msgstr "Titel"
+
 msgid "plugins.generic.downloadFileNames.variableType.label"
 msgstr "Benutzerdefinierter Dateiname:"
 

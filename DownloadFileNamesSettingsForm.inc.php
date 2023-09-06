@@ -44,6 +44,8 @@ class DownloadFileNamesSettingsForm extends Form {
 		$this->setData('number', $this->plugin->getSetting($contextId, 'number'));
 		$this->setData('pages', $this->plugin->getSetting($contextId, 'pages'));
 		$this->setData('fileId', $this->plugin->getSetting($contextId, 'fileId'));		
+		$this->setData('author', $this->plugin->getSetting($contextId, 'author'));
+		$this->setData('title', $this->plugin->getSetting($contextId, 'title'));
 	}
 
 	/**
@@ -56,7 +58,9 @@ class DownloadFileNamesSettingsForm extends Form {
 			'volume',
 			'number',
 			'pages',
-			'fileId'
+			'fileId',
+			'author',
+			'title'			
 		));
 	}
 
@@ -69,15 +73,7 @@ class DownloadFileNamesSettingsForm extends Form {
 
 		$templateMgr = TemplateManager::getManager($request);
 		$templateMgr->assign(array(
-			'pluginName' => $this->plugin->getName(),
-			'labelType1' => "labeltype1",
-			'labelType2' => "labeltype2",
-			'labelType3' => "labeltype3",
-			'labelAcronym' => "labelAcronym",
-			'labelVolume' => "labelVolume",
-			'labelNumber' => "labelNumber",
-			'labelPages' => "labelPages",
-			'labelFileId' => "labelFileId",
+			'pluginName' => $this->plugin->getName()			
 		));
 
 		return parent::fetch($request, $template, $display);
@@ -98,31 +94,9 @@ class DownloadFileNamesSettingsForm extends Form {
 		$this->plugin->updateSetting($contextId, 'number',$this->getData('number'));
 		$this->plugin->updateSetting($contextId, 'pages',$this->getData('pages'));
 		$this->plugin->updateSetting($contextId, 'fileId',$this->getData('fileId'));
-		
-$myfile = 'test.txt';
-$newContentCF5344 = print_r($this->getData('type'), true);
-$contentCF2343 = file_get_contents($myfile);
-$contentCF2343 .= "\n type: " . $newContentCF5344 ;
-file_put_contents($myfile, $contentCF2343 );
+		$this->plugin->updateSetting($contextId, 'author',$this->getData('author'));
+		$this->plugin->updateSetting($contextId, 'title',$this->getData('title'));		
 
-/*
-		switch ($type) {
-			case "100":
-				$this->plugin->updateSetting($contextId, 'type',"type1");
-				break;
-			case "010":
-				$this->plugin->updateSetting($contextId, 'type',"type2");			
-				break;
-			case "001":
-				$this->plugin->updateSetting($contextId, 'type',"type3");			
-				break;
-		}*/
-		
-		/*
-		$this->plugin->updateSetting($contextId, 'type1', $this->getData('type1'));
-		$this->plugin->updateSetting($contextId, 'type2', $this->getData('type2'));
-		$this->plugin->updateSetting($contextId, 'type3', $this->getData('type3'));*/
-		
 		import('classes.notification.NotificationManager');
 		$notificationMgr = new NotificationManager();
 		$user = $request->getUser();

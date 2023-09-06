@@ -38,6 +38,12 @@ msgstr "Pages"
 msgid "plugins.generic.downloadFileNames.fileId.description"
 msgstr "File ID (only for PDF galleys)"
 
+msgid "plugins.generic.downloadFileNames.author.description"
+msgstr "First author"
+
+msgid "plugins.generic.downloadFileNames.title.description"
+msgstr "Title"
+
 msgid "plugins.generic.downloadFileNames.variableType.label"
 msgstr "Custom file name:"
 

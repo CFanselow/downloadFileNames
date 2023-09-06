@@ -74,6 +74,14 @@ class DownloadFileNamesPlugin extends GenericPlugin {
 		$volume = $issue->getVolume();
 		$number = $issue->getNumber();
 		$pages = $submission->getCurrentPublication()->getData('pages'); // select setting_name, setting_value from publication_settings where setting_name="pages";
+		
+		$authors = $submission->getAuthors();
+		$author = $authors[0]->getFamilyName($locale);
+		if (empty($author)) {
+			$author = $authors[0]->getFamilyName($primaryLocale);
+		}
+		$title = strip_tags($submission->getLocalizedTitle());
+		$title = $title = str_replace(" ","-",$title);
 
 		// switch through types
 		$type = $this->getSetting($contextId, 'type');
@@ -84,12 +92,16 @@ class DownloadFileNamesPlugin extends GenericPlugin {
 				$useVolume = $this->getSetting($contextId, 'volume');
 				$useNumber = $this->getSetting($contextId, 'number');
 				$usePages = $this->getSetting($contextId, 'pages');
-				$useFileId = $this->getSetting($contextId, 'fileId');				
+				$useFileId = $this->getSetting($contextId, 'fileId');
+				$useAuthor = $this->getSetting($contextId, 'author');
+				$useTitle = $this->getSetting($contextId, 'title');				
 				if ($useAcronym && isset($acronym)) {$newFilename .= "_".$acronym ;}
 				if ($useVolume && isset($volume)) {$newFilename .= "_".$volume ;}
 				if ($useNumber && isset($number)) {$newFilename .= "_".$number ;}
 				if ($usePages && isset($pages)) {$newFilename .= "_".$pages ;}
-				if ($useFileId && isset($fileId)) {$newFilename .= "_".$fileId ;}				
+				if ($useFileId && isset($fileId)) {$newFilename .= "_".$fileId ;}
+				if ($useAuthor && isset($author)) {$newFilename .= "_".$author ;}
+				if ($useTitle && isset($title)) {$newFilename .= "_".$title ;}				
 				if (substr($newFilename, 0, 1)=="_") {$newFilename = substr($newFilename,-(strlen($newFilename)-1));}
 				break;
 			case 2:
@@ -99,15 +111,6 @@ class DownloadFileNamesPlugin extends GenericPlugin {
 				}
 				break;
 			case 3:
-				$authors = $submission->getAuthors();
-				$primaryAuthor = $authors[0]->getFamilyName($locale);
-				if (empty($primaryAuthor)) {
-					$primaryAuthor = $authors[0]->getFamilyName($primaryLocale);
-				}	
-				if (!empty($primaryAuthor)) {$newFilename = $primaryAuthor."-";}
-				$newFilename .= strip_tags($submission->getLocalizedTitle());
-				$newFilename = str_replace(" ","_",$newFilename);
-				if (strlen($newFilename)>100) {$newFilename = substr($newFilename,0,100)."...";}
 				break;
 		}
 		if ($newFilename=="") {$newFilename = "document";}
