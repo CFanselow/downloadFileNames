@@ -69,15 +69,7 @@ class DownloadFileNamesSettingsForm extends Form {
 
 		$templateMgr = TemplateManager::getManager($request);
 		$templateMgr->assign(array(
-			'pluginName' => $this->plugin->getName(),
-			'labelType1' => "labeltype1",
-			'labelType2' => "labeltype2",
-			'labelType3' => "labeltype3",
-			'labelAcronym' => "labelAcronym",
-			'labelVolume' => "labelVolume",
-			'labelNumber' => "labelNumber",
-			'labelPages' => "labelPages",
-			'labelFileId' => "labelFileId",
+			'pluginName' => $this->plugin->getName()
 		));
 
 		return parent::fetch($request, $template, $display);
