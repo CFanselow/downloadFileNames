@@ -90,7 +90,6 @@ class DownloadFileNamesSettingsForm extends Form {
 		$request = Application::get()->getRequest();
 		$context = $request->getContext();
 		$contextId = $context ? $context->getId() : 0;
-		//$type = "".(null !== $this->getData('type1')).(null !== $this->getData('type2')).(null !== $this->getData('type3'));
 		
 		$this->plugin->updateSetting($contextId, 'type',$this->getData('type'));
 		$this->plugin->updateSetting($contextId, 'acronym',$this->getData('acronym'));
@@ -98,30 +97,6 @@ class DownloadFileNamesSettingsForm extends Form {
 		$this->plugin->updateSetting($contextId, 'number',$this->getData('number'));
 		$this->plugin->updateSetting($contextId, 'pages',$this->getData('pages'));
 		$this->plugin->updateSetting($contextId, 'fileId',$this->getData('fileId'));
-		
-$myfile = 'test.txt';
-$newContentCF5344 = print_r($this->getData('type'), true);
-$contentCF2343 = file_get_contents($myfile);
-$contentCF2343 .= "\n type: " . $newContentCF5344 ;
-file_put_contents($myfile, $contentCF2343 );
-
-/*
-		switch ($type) {
-			case "100":
-				$this->plugin->updateSetting($contextId, 'type',"type1");
-				break;
-			case "010":
-				$this->plugin->updateSetting($contextId, 'type',"type2");			
-				break;
-			case "001":
-				$this->plugin->updateSetting($contextId, 'type',"type3");			
-				break;
-		}*/
-		
-		/*
-		$this->plugin->updateSetting($contextId, 'type1', $this->getData('type1'));
-		$this->plugin->updateSetting($contextId, 'type2', $this->getData('type2'));
-		$this->plugin->updateSetting($contextId, 'type3', $this->getData('type3'));*/
 		
 		import('classes.notification.NotificationManager');
 		$notificationMgr = new NotificationManager();
