@@ -79,7 +79,10 @@ class DownloadFileNamesPlugin extends GenericPlugin {
 		$authorArray = $authors[0]->getFamilyName(null);
 		$author = $authorArray[array_key_first($authorArray)];
 
-		$title = strip_tags($submission->getLocalizedTitle());
+		$title = strip_tags($submission->getTitle($locale));
+		if (empty($title)) {
+			$title = strip_tags($submission->getLocalizedTitle());
+		}
 		$title = str_replace(" ","-",$title);
 
 		// switch through types
