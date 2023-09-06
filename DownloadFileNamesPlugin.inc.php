@@ -76,12 +76,11 @@ class DownloadFileNamesPlugin extends GenericPlugin {
 		$pages = $submission->getCurrentPublication()->getData('pages'); // select setting_name, setting_value from publication_settings where setting_name="pages";
 		
 		$authors = $submission->getAuthors();
-		$author = $authors[0]->getFamilyName($locale);
-		if (empty($author)) {
-			$author = $authors[0]->getFamilyName($primaryLocale);
-		}
+		$authorArray = $authors[0]->getFamilyName(null);
+		$author = $authorArray[array_key_first($authorArray)];
+
 		$title = strip_tags($submission->getLocalizedTitle());
-		$title = $title = str_replace(" ","-",$title);
+		$title = str_replace(" ","-",$title);
 
 		// switch through types
 		$type = $this->getSetting($contextId, 'type');
