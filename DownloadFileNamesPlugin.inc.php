@@ -103,6 +103,7 @@ class DownloadFileNamesPlugin extends GenericPlugin {
 				if ($useAuthor && isset($author)) {$newFilename .= "_".$author ;}
 				if ($useTitle && isset($title)) {$newFilename .= "_".$title ;}				
 				if (substr($newFilename, 0, 1)=="_") {$newFilename = substr($newFilename,-(strlen($newFilename)-1));}
+				if (strlen($newFilename)>100) {$newFilename = substr($newFilename,0,100)."...";}
 				break;
 			case 2:
 				if ($filename!=="") {
