@@ -48,6 +48,11 @@ class DownloadFileNamesPlugin extends GenericPlugin {
 
 		$path =& $params[0];
 		$filename =& $params[1];
+		$requestPath = Application::get()->getRequest()->getRequestPath();
+		if (!str_contains($requestPath,"article/download")) {
+			return false;
+		}
+
 		$contextId = Application::get()->getRequest()->getContext()->getId();
 		$primaryLocale = Application::get()->getRequest()->getJournal()->getPrimaryLocale();
 		$locale = AppLocale::getLocale(); 
@@ -63,7 +68,7 @@ class DownloadFileNamesPlugin extends GenericPlugin {
 		$submission = $submissionDao->getById($submissionId);
 
 		$extension = strtolower(pathinfo($path, PATHINFO_EXTENSION));
-		$requestPath = Application::get()->getRequest()->getRequestPath();
+
 		$requestPathArray = explode("/",$requestPath);
 		$fileId = null;
 		if ($extension=="pdf") {$fileId = $requestPathArray[sizeof($requestPathArray)-1];}
